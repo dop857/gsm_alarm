@@ -1,0 +1,22 @@
+--cpu Cortex-M3
+"gsm_alarm\startup_stm32f103x6.o"
+"gsm_alarm\system_stm32f1xx.o"
+"gsm_alarm\stm32f1xx_it.o"
+"gsm_alarm\main.o"
+"gsm_alarm\stm32f1xx_hal_msp.o"
+"gsm_alarm\stm32f1xx_hal_flash.o"
+"gsm_alarm\stm32f1xx_hal_tim.o"
+"gsm_alarm\stm32f1xx_hal.o"
+"gsm_alarm\stm32f1xx_hal_rcc.o"
+"gsm_alarm\stm32f1xx_hal_cortex.o"
+"gsm_alarm\stm32f1xx_hal_gpio.o"
+"gsm_alarm\stm32f1xx_hal_rcc_ex.o"
+"gsm_alarm\stm32f1xx_hal_gpio_ex.o"
+"gsm_alarm\stm32f1xx_hal_pwr.o"
+"gsm_alarm\stm32f1xx_hal_dma.o"
+"gsm_alarm\stm32f1xx_hal_flash_ex.o"
+"gsm_alarm\stm32f1xx_hal_tim_ex.o"
+--library_type=microlib --strict --scatter "gsm_alarm\gsm_alarm.sct"
+--diag_suppress=L6329 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "gsm_alarm.map" -o gsm_alarm\gsm_alarm.axf
