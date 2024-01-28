@@ -19,7 +19,17 @@ gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal
 gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
 gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
 gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can.h
+gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_can_ex.h
 gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
+gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
 gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc.h
+gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rtc_ex.h
+gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+gsm_alarm\stm32f1xx_hal_rcc.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h

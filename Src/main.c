@@ -39,6 +39,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f1xx_hal.h"
+#include "SIM800A.h"
 
 /* USER CODE BEGIN Includes */
 
@@ -94,7 +95,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+ 
   /* USER CODE END Init */
 
   /* Configure the system clock */

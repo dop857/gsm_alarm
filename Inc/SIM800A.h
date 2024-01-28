@@ -6,9 +6,15 @@
 #define SIM800A_Reboot_GPIOX GPIOB
 #define SIM800A_Reboot_RCC_APBPERIPH_GPIOX RCC_APB2Periph_GPIOB
 #define SIM800A_Reboot_GPIO_PIN GPIO_Pin_14
+#define GPRS_RECEIVE_STRING_BUFFER_LENGTH 2048
+#include "stm32f1xx_hal_uart.h"
 /******************************************************************************
 数据缓冲区声明
 ******************************************************************************/
+typedef unsigned          char u8; 
+typedef uint16_t u16; 
+
+
 extern u8 GPRSLine, GPRSRow;			//接收的行和列计数
 extern u8 GPRSReceiveBuff[10][GPRS_RECEIVE_STRING_BUFFER_LENGTH];		//GPRS接收数据缓冲区
 extern u8 GPRSSendBuff[100];			//GPRS发送数据缓冲
@@ -17,9 +23,9 @@ extern u8 GPRSSendBuff[100];			//GPRS发送数据缓冲
 ******************************************************************************/
 typedef struct
 {
-    USART_TypeDef * GPRSUSART;//发送命令串口
-    USART_TypeDef * DEBUGUSART;//调试信息输出串口
-    OS_EVENT * MsgQ;
+    UART_HandleTypeDef * GPRSUSART;//发送命令串口
+    UART_HandleTypeDef * DEBUGUSART;//调试信息输出串口
+    //OS_EVENT * MsgQ;
     char * SendString;//发送的字符串
     char * ReturnString;//远程返回的字符串
     char * ReturnStringExt1;//远程返回的第二个字符串，需要提前建立缓冲区
@@ -68,8 +74,8 @@ typedef enum requestMethod
 //Public：
 void SIM800A_RebootIOInit(void);//被放到bsp的函数中调用
 void SIM800A_Reboot(void);//重启设备
-void SIM800A_CommandHandleDeinit(SIM800A_QueryTypeDef * CommandHandle, OS_EVENT * MsgQ);//默认初始化设备
-void SIM800A_CommandHandleInit(SIM800A_QueryTypeDef * CommandHandle, USART_TypeDef * GPRSUSART, USART_TypeDef * DEBUGUSART, OS_EVENT * MsgQ);//初始化句柄
+void SIM800A_CommandHandleDeinit(SIM800A_QueryTypeDef * CommandHandle);//默认初始化设备
+void SIM800A_CommandHandleInit(SIM800A_QueryTypeDef * CommandHandle, USART_TypeDef * GPRSUSART, USART_TypeDef * DEBUGUSART);//初始化句柄
 Status SIM800A_TryToHandshake(SIM800A_QueryTypeDef * CommandHandle);//尝试与设备握手
 //HTTP：
 Status SIM800A_HTTPConnect(SIM800A_QueryTypeDef * NetWorkCommandHandle, u8 * requestURL, u8 * returnString, int returnStringLength);

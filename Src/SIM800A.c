@@ -1,7 +1,7 @@
 /******************************************************************************
 包含头文件
 ******************************************************************************/
-#include "includes.h"
+#include "SIM800A.h"
 /******************************************************************************
 数据缓冲区定义
 ******************************************************************************/
@@ -44,7 +44,7 @@ void SIM800A_RebootIOInit()
 //
 // FILE: network.c
 /*****************************************************************************/
-void SIM800A_CommandHandleDeinit(SIM800A_QueryTypeDef * CommandHandle, OS_EVENT * MsgQ)
+void SIM800A_CommandHandleDeinit(SIM800A_QueryTypeDef * CommandHandle)
 {
     CommandHandle->DebugString = NULL;
     CommandHandle->SendString = NULL;
@@ -53,7 +53,7 @@ void SIM800A_CommandHandleDeinit(SIM800A_QueryTypeDef * CommandHandle, OS_EVENT 
     CommandHandle->ReturnStringExt2 = NULL;
     CommandHandle->GPRSUSART = USART_GPRS;
     CommandHandle->DEBUGUSART = USART_DEBUG;
-    CommandHandle->MsgQ = MsgQ;
+   // CommandHandle->MsgQ = MsgQ;
     CommandHandle->delayMs = 800;
     CommandHandle->retryTimes = 3;
 }
@@ -67,7 +67,7 @@ void SIM800A_CommandHandleDeinit(SIM800A_QueryTypeDef * CommandHandle, OS_EVENT 
 //
 // FILE: network.c
 /*****************************************************************************/
-void SIM800A_CommandHandleInit(SIM800A_QueryTypeDef * CommandHandle, USART_TypeDef * GPRSUSART, USART_TypeDef * DEBUGUSART, OS_EVENT * MsgQ)
+void SIM800A_CommandHandleInit(SIM800A_QueryTypeDef * CommandHandle, USART_TypeDef * GPRSUSART, USART_TypeDef * DEBUGUSART)
 {
     CommandHandle->DebugString = NULL;
     CommandHandle->SendString = NULL;
@@ -76,7 +76,7 @@ void SIM800A_CommandHandleInit(SIM800A_QueryTypeDef * CommandHandle, USART_TypeD
     CommandHandle->ReturnStringExt2 = NULL;
     CommandHandle->GPRSUSART = GPRSUSART;
     CommandHandle->DEBUGUSART = DEBUGUSART;
-    CommandHandle->MsgQ = MsgQ;
+    //CommandHandle->MsgQ = MsgQ;
     CommandHandle->delayMs = 800;
     CommandHandle->retryTimes = 3;
 }

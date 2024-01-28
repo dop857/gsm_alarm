@@ -21,37 +21,75 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
-C:\Users\Администратор\Documents\stm32\gsm_alarm\MDK-ARM\gsm_alarm.uvprojx
-Project File Date:  01/27/2024
+C:\stm32\gsm_alarm\MDK-ARM\gsm_alarm.uvprojx
+Project File Date:  01/28/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'gsm_alarm'
-assembling startup_stm32f103x6.s...
-compiling system_stm32f1xx.c...
-compiling stm32f1xx_it.c...
-compiling main.c...
-../Src/main.c(104): warning:  #188-D: enumerated type mixed with another type
-                HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,1);
-../Src/main.c(106): warning:  #188-D: enumerated type mixed with another type
-                HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,0);
-../Src/main.c: 2 warnings, 0 errors
-compiling stm32f1xx_hal_msp.c...
-compiling stm32f1xx_hal_flash.c...
-compiling stm32f1xx_hal_tim.c...
-compiling stm32f1xx_hal.c...
-compiling stm32f1xx_hal_rcc.c...
-compiling stm32f1xx_hal_cortex.c...
-compiling stm32f1xx_hal_gpio.c...
-compiling stm32f1xx_hal_rcc_ex.c...
-compiling stm32f1xx_hal_gpio_ex.c...
-compiling stm32f1xx_hal_pwr.c...
-compiling stm32f1xx_hal_dma.c...
-compiling stm32f1xx_hal_flash_ex.c...
-compiling stm32f1xx_hal_tim_ex.c...
-linking...
-Program Size: Code=2648 RO-data=284 RW-data=8 ZI-data=1024  
-"gsm_alarm\gsm_alarm.axf" - 0 Error(s), 2 Warning(s).
+compiling SIM800A.c...
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h(1877): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_RCCEx_PeriphCLKConfig(RCC_PeriphCLKInitTypeDef  *PeriphClkInit);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h(1174): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_RCC_OscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruct);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h(1175): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, uint32_t FLatency);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h(255): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_GPIO_LockPin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(135): error:  #20: identifier "HAL_LockTypeDef" is undefined
+    HAL_LockTypeDef       Lock;                            /*!< DMA locking object                     */  
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(385): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_DMA_Init(DMA_HandleTypeDef *hdma);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(386): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_DMA_DeInit (DMA_HandleTypeDef *hdma);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(395): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_DMA_Start (DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(396): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_DMA_Start_IT(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(397): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_DMA_Abort(DMA_HandleTypeDef *hdma);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(398): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_DMA_Abort_IT(DMA_HandleTypeDef *hdma);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(399): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_DMA_PollForTransfer(DMA_HandleTypeDef *hdma, uint32_t CompleteLevel, uint32_t Timeout);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(401): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_DMA_RegisterCallback(DMA_HandleTypeDef *hdma, HAL_DMA_CallbackIDTypeDef CallbackID, void (* pCallback)( DMA_HandleTypeDef * _hdma));
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(402): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_DMA_UnRegisterCallback(DMA_HandleTypeDef *hdma, HAL_DMA_CallbackIDTypeDef CallbackID);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(199): error:  #20: identifier "HAL_LockTypeDef" is undefined
+    HAL_LockTypeDef             Lock;       /*!< CAN locking object             */
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(701): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_CAN_Init(CAN_HandleTypeDef* hcan);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(702): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_CAN_ConfigFilter(CAN_HandleTypeDef* hcan, CAN_FilterConfTypeDef* sFilterConfig);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(703): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_CAN_DeInit(CAN_HandleTypeDef* hcan);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(715): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_CAN_Transmit(CAN_HandleTypeDef *hcan, uint32_t Timeout);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(716): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_CAN_Transmit_IT(CAN_HandleTypeDef *hcan);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(717): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_CAN_Receive(CAN_HandleTypeDef *hcan, uint8_t FIFONumber, uint32_t Timeout);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(718): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_CAN_Receive_IT(CAN_HandleTypeDef *hcan, uint8_t FIFONumber);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(719): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_CAN_Sleep(CAN_HandleTypeDef *hcan);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(720): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef HAL_CAN_WakeUp(CAN_HandleTypeDef *hcan);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h(200): error:  #20: identifier "HAL_LockTypeDef" is undefined
+    HAL_LockTypeDef               Lock;                   /*!< ADC locking object */
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h(665): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef       HAL_ADCEx_Calibration_Start(ADC_HandleTypeDef* hadc);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h(668): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef       HAL_ADCEx_InjectedStart(ADC_HandleTypeDef* hadc);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h(669): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef       HAL_ADCEx_InjectedStop(ADC_HandleTypeDef* hadc);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h(670): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef       HAL_ADCEx_InjectedPollForConversion(ADC_HandleTypeDef* hadc, uint32_t Timeout);
+..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h(673): error:  #20: identifier "HAL_StatusTypeDef" is undefined
+  HAL_StatusTypeDef       HAL_ADCEx_InjectedStart_IT(ADC_HandleTypeDef* hadc);
+..\Src\SIM800A.c: 0 warnings, 30 errors
+"gsm_alarm\gsm_alarm.axf" - 30 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -74,7 +112,8 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
-Build Time Elapsed:  00:01:07
+Target not created.
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>
