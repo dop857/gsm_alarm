@@ -3,19 +3,19 @@
 <pre>
 <h1>礦ision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: 礦ision V5.35.0.0
+IDE-Version: 礦ision V5.36.0.0
 Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: 1 GYP, gpx, LIC=8MZI6-D13QP-KU24L-0NATI-6CJLK-TGJBR
+License Information: 1 1, 1, LIC=0VRJ7-EXZHR-35LTX-H9EXV-7LG2R-UDCXD
  
 Tool Versions:
-Toolchain:       MDK-ARM Professional  Version: 5.35.0.2
+Toolchain:       MDK-ARM Professional  Version: 5.36.0.0
 Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 7 (build 960)
 Assembler:       Armasm.exe V5.06 update 7 (build 960)
 Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
 Library Manager: ArmAr.exe V5.06 update 7 (build 960)
 Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
-CPU DLL:         SARMCM3.DLL V5.35.0.2
+CPU DLL:         SARMCM3.DLL V5.36.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
 Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
 Dialog DLL:      TCM.DLL V1.53.0.0
@@ -28,68 +28,96 @@ Project File Date:  01/28/2024
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'gsm_alarm'
 compiling SIM800A.c...
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc_ex.h(1877): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_RCCEx_PeriphCLKConfig(RCC_PeriphCLKInitTypeDef  *PeriphClkInit);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h(1174): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_RCC_OscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruct);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_rcc.h(1175): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, uint32_t FLatency);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_gpio.h(255): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_GPIO_LockPin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(135): error:  #20: identifier "HAL_LockTypeDef" is undefined
-    HAL_LockTypeDef       Lock;                            /*!< DMA locking object                     */  
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(385): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_DMA_Init(DMA_HandleTypeDef *hdma);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(386): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_DMA_DeInit (DMA_HandleTypeDef *hdma);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(395): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_DMA_Start (DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(396): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_DMA_Start_IT(DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(397): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_DMA_Abort(DMA_HandleTypeDef *hdma);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(398): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_DMA_Abort_IT(DMA_HandleTypeDef *hdma);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(399): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_DMA_PollForTransfer(DMA_HandleTypeDef *hdma, uint32_t CompleteLevel, uint32_t Timeout);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(401): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_DMA_RegisterCallback(DMA_HandleTypeDef *hdma, HAL_DMA_CallbackIDTypeDef CallbackID, void (* pCallback)( DMA_HandleTypeDef * _hdma));
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_dma.h(402): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_DMA_UnRegisterCallback(DMA_HandleTypeDef *hdma, HAL_DMA_CallbackIDTypeDef CallbackID);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(199): error:  #20: identifier "HAL_LockTypeDef" is undefined
-    HAL_LockTypeDef             Lock;       /*!< CAN locking object             */
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(701): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_CAN_Init(CAN_HandleTypeDef* hcan);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(702): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_CAN_ConfigFilter(CAN_HandleTypeDef* hcan, CAN_FilterConfTypeDef* sFilterConfig);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(703): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_CAN_DeInit(CAN_HandleTypeDef* hcan);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(715): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_CAN_Transmit(CAN_HandleTypeDef *hcan, uint32_t Timeout);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(716): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_CAN_Transmit_IT(CAN_HandleTypeDef *hcan);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(717): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_CAN_Receive(CAN_HandleTypeDef *hcan, uint8_t FIFONumber, uint32_t Timeout);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(718): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_CAN_Receive_IT(CAN_HandleTypeDef *hcan, uint8_t FIFONumber);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(719): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_CAN_Sleep(CAN_HandleTypeDef *hcan);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_can.h(720): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef HAL_CAN_WakeUp(CAN_HandleTypeDef *hcan);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc.h(200): error:  #20: identifier "HAL_LockTypeDef" is undefined
-    HAL_LockTypeDef               Lock;                   /*!< ADC locking object */
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h(665): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef       HAL_ADCEx_Calibration_Start(ADC_HandleTypeDef* hadc);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h(668): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef       HAL_ADCEx_InjectedStart(ADC_HandleTypeDef* hadc);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h(669): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef       HAL_ADCEx_InjectedStop(ADC_HandleTypeDef* hadc);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h(670): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef       HAL_ADCEx_InjectedPollForConversion(ADC_HandleTypeDef* hadc, uint32_t Timeout);
-..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_adc_ex.h(673): error:  #20: identifier "HAL_StatusTypeDef" is undefined
-  HAL_StatusTypeDef       HAL_ADCEx_InjectedStart_IT(ADC_HandleTypeDef* hadc);
-..\Src\SIM800A.c: 0 warnings, 30 errors
-"gsm_alarm\gsm_alarm.axf" - 30 Error(s), 0 Warning(s).
+..\Inc\SIM800A.h(99): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Src\SIM800A.c(35): warning:  #188-D: enumerated type mixed with another type
+        HAL_GPIO_WritePin(SIM800A_Reboot_GPIOX, SIM800A_Reboot_GPIO_PIN,1);
+..\Src\SIM800A.c(55): error:  #513: a value of type "USART_TypeDef *" cannot be assigned to an entity of type "UART_HandleTypeDef *"
+      CommandHandle->GPRSUSART = USART_GPRS;
+..\Src\SIM800A.c(78): error:  #513: a value of type "USART_TypeDef *" cannot be assigned to an entity of type "UART_HandleTypeDef *"
+      CommandHandle->GPRSUSART = GPRSUSART;
+..\Src\SIM800A.c(102): warning:  #223-D: function "USARTSendString" declared implicitly
+      USARTSendString(CommandHandle->GPRSUSART, (u8*)CommandHandle->SendString);//发送的消息
+..\Src\SIM800A.c(110): error:  #20: identifier "ReceiveMsgQData" is undefined
+              if(ReceiveMsgQData.OSNMsgs > 0)
+..\Src\SIM800A.c(112): warning:  #223-D: function "OSQPend" declared implicitly
+                  receiveString = OSQPend(CommandHandle->MsgQ, 0, &error);              //消息出队
+..\Src\SIM800A.c(112): error:  #136: struct "<unnamed>"  has no field "MsgQ"
+                  receiveString = OSQPend(CommandHandle->MsgQ, 0, &error);              //消息出队
+..\Src\SIM800A.c(112): error:  #513: a value of type "int" cannot be assigned to an entity of type "u8 *"
+                  receiveString = OSQPend(CommandHandle->MsgQ, 0, &error);              //消息出队
+..\Src\SIM800A.c(113): warning:  #223-D: function "strstr" declared implicitly
+                  if(strstr((char*)receiveString, CommandHandle->ReturnString) != NULL)         //如果消息匹配
+..\Src\SIM800A.c(115): warning:  #223-D: function "ClearStringBuff" declared implicitly
+                      ClearStringBuff(receiveString, GPRS_RECEIVE_STRING_BUFFER_LENGTH);                       //清空消息缓冲区
+..\Src\SIM800A.c(123): warning:  #223-D: function "ClearStringBuff" declared implicitly
+                      ClearStringBuff(receiveString, GPRS_RECEIVE_STRING_BUFFER_LENGTH);  
+..\Src\SIM800A.c(128): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+              OSTimeDlyHMSM(0, 0, 0, CommandHandle->delayMs);
+..\Src\SIM800A.c(137): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+              OSTimeDlyHMSM(0, 0, 0, CommandHandle->delayMs);                   
+..\Src\SIM800A.c(207): warning:  #223-D: function "USARTSendString" declared implicitly
+              USARTSendString(NetWorkCommandHandle->DEBUGUSART, (u8*)NetWorkCommandHandle->DebugString);   
+..\Src\SIM800A.c(210): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+          OSTimeDlyHMSM(0, 0, 3, 0);
+..\Src\SIM800A.c(213): error:  #20: identifier "OS_Q_DATA" is undefined
+          OS_Q_DATA ReceiveMsgQData;                    //存放消息队列状态的结构
+..\Src\SIM800A.c(214): error:  #20: identifier "INT8U" is undefined
+          INT8U error;
+..\Src\SIM800A.c(219): warning:  #223-D: function "OSQQuery" declared implicitly
+                  OSQQuery(NetWorkCommandHandle->MsgQ, &ReceiveMsgQData);
+..\Src\SIM800A.c(219): error:  #136: struct "<unnamed>"  has no field "MsgQ"
+                  OSQQuery(NetWorkCommandHandle->MsgQ, &ReceiveMsgQData);
+..\Src\SIM800A.c(222): warning:  #223-D: function "OSQPend" declared implicitly
+                      receiveString = OSQPend(NetWorkCommandHandle->MsgQ, 0, &error);           //消息出队
+..\Src\SIM800A.c(222): error:  #136: struct "<unnamed>"  has no field "MsgQ"
+                      receiveString = OSQPend(NetWorkCommandHandle->MsgQ, 0, &error);           //消息出队
+..\Src\SIM800A.c(222): error:  #513: a value of type "int" cannot be assigned to an entity of type "u8 *"
+                      receiveString = OSQPend(NetWorkCommandHandle->MsgQ, 0, &error);           //消息出队
+..\Src\SIM800A.c(223): warning:  #223-D: function "strstr" declared implicitly
+                      if(strstr((char *)receiveString, NetWorkCommandHandle->ReturnStringExt1) != NULL)//如果包含消息
+..\Src\SIM800A.c(225): warning:  #223-D: function "ClearStringBuff" declared implicitly
+                          ClearStringBuff(receiveString, GPRS_RECEIVE_STRING_BUFFER_LENGTH);  //清空消息缓冲区
+..\Src\SIM800A.c(227): warning:  #223-D: function "USARTSendString" declared implicitly
+                          USARTSendString(NetWorkCommandHandle->DEBUGUSART, (u8*)NetWorkCommandHandle->DebugString);   
+..\Src\SIM800A.c(233): warning:  #223-D: function "ClearStringBuff" declared implicitly
+                          ClearStringBuff(receiveString, GPRS_RECEIVE_STRING_BUFFER_LENGTH); 
+..\Src\SIM800A.c(243): warning:  #223-D: function "USARTSendString" declared implicitly
+                  USARTSendString(NetWorkCommandHandle->DEBUGUSART, (u8*)NetWorkCommandHandle->DebugString);          
+..\Src\SIM800A.c(285): error:  #20: identifier "OS_Q_DATA" is undefined
+      OS_Q_DATA ReceiveMsgQData;                        //存放消息队列状态的结构
+..\Src\SIM800A.c(291): warning:  #223-D: function "OSTimeDlyHMSM" declared implicitly
+              OSTimeDlyHMSM(0, 0, 0, NetWorkCommandHandle->delayMs);
+..\Src\SIM800A.c(292): warning:  #223-D: function "OSQQuery" declared implicitly
+              OSQQuery(NetWorkCommandHandle->MsgQ, &ReceiveMsgQData);
+..\Src\SIM800A.c(292): error:  #136: struct "<unnamed>"  has no field "MsgQ"
+              OSQQuery(NetWorkCommandHandle->MsgQ, &ReceiveMsgQData);
+..\Src\SIM800A.c(295): warning:  #223-D: function "OSQPend" declared implicitly
+                  receiveString = OSQPend(NetWorkCommandHandle->MsgQ, 0, &error);               //消息出队
+..\Src\SIM800A.c(295): error:  #136: struct "<unnamed>"  has no field "MsgQ"
+                  receiveString = OSQPend(NetWorkCommandHandle->MsgQ, 0, &error);               //消息出队
+..\Src\SIM800A.c(295): error:  #513: a value of type "int" cannot be assigned to an entity of type "u8 *"
+                  receiveString = OSQPend(NetWorkCommandHandle->MsgQ, 0, &error);               //消息出队
+..\Src\SIM800A.c(302): warning:  #223-D: function "ClearStringBuff" declared implicitly
+                  ClearStringBuff(receiveString, GPRS_RECEIVE_STRING_BUFFER_LENGTH);  
+..\Src\SIM800A.c(304): warning:  #223-D: function "USARTSendString" declared implicitly
+                  USARTSendString(NetWorkCommandHandle->DEBUGUSART, (u8*)NetWorkCommandHandle->DebugString);        
+..\Src\SIM800A.c(313): warning:  #223-D: function "USARTSendString" declared implicitly
+              USARTSendString(NetWorkCommandHandle->DEBUGUSART, (u8*)NetWorkCommandHandle->DebugString);  
+..\Src\SIM800A.c(318): warning:  #223-D: function "ClearStringQueue" declared implicitly
+      ClearStringQueue(NetWorkCommandHandle->MsgQ, GPRS_RECEIVE_STRING_BUFFER_LENGTH);//清空消息队列
+..\Src\SIM800A.c(318): error:  #136: struct "<unnamed>"  has no field "MsgQ"
+      ClearStringQueue(NetWorkCommandHandle->MsgQ, GPRS_RECEIVE_STRING_BUFFER_LENGTH);//清空消息队列
+..\Src\SIM800A.c(361): warning:  #177-D: variable "str2"  was declared but never referenced
+              char *str2 = "\"\r\n";
+..\Src\SIM800A.c(429): warning:  #9-D: nested comment is not allowed
+              /******************************************************************************
+..\Src\SIM800A.c(577): warning:  #223-D: function "MergeString" declared implicitly
+              MergeString(SendString, TCPHandle->ipString, 80);//此时的字符串就像这样：AT+CIPSTART=\"TCP\",\"sys.czbtzn.cn
+..\Src\SIM800A.c(597): warning:  #223-D: function "USARTSendString" declared implicitly
+              USARTSendString(NetWorkCommandHandle->DEBUGUSART, (u8*)NetWorkCommandHandle->DebugString); 
+..\Src\SIM800A.c: 29 warnings, 15 errors
+"gsm_alarm\gsm_alarm.axf" - 15 Error(s), 29 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -99,21 +127,15 @@ Package Vendor: ARM
                 CMSIS (Common Microcontroller Software Interface Standard)
    * Component: CORE Version: 5.5.0
 
-Package Vendor: Keil
-                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.1.0.pack
-                Keil.STM32F1xx_DFP.2.1.0
-                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
-
 <h2>Collection of Component include folders:</h2>
   .\RTE\_gsm_alarm
-  C:\Users\冷扈龛耱疣蝾餦AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
-  C:\Users\冷扈龛耱疣蝾餦AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.1.0\Device\Include
+  C:\Users\admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.5.0
 Target not created.
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

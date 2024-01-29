@@ -5,9 +5,12 @@
 ******************************************************************************/
 #define SIM800A_Reboot_GPIOX GPIOB
 #define SIM800A_Reboot_RCC_APBPERIPH_GPIOX RCC_APB2Periph_GPIOB
-#define SIM800A_Reboot_GPIO_PIN GPIO_Pin_14
+//#define SIM800A_Reboot_GPIO_PIN GPIO_Pin_14
+#define SIM800A_Reboot_GPIO_PIN 14
 #define GPRS_RECEIVE_STRING_BUFFER_LENGTH 2048
-#include "stm32f1xx_hal_uart.h"
+
+//#include "stm32f1xx_hal_uart.h"
+#include "stm32f1xx_hal.h"
 /******************************************************************************
 数据缓冲区声明
 ******************************************************************************/

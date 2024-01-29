@@ -2,6 +2,7 @@
 包含头文件
 ******************************************************************************/
 #include "SIM800A.h"
+#define USART_GPRS USART1
 /******************************************************************************
 数据缓冲区定义
 ******************************************************************************/
@@ -25,14 +26,14 @@ void SIM800A_RebootIOInit()
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	
-	RCC_APB2PeriphClockCmd(SIM800A_Reboot_RCC_APBPERIPH_GPIOX, ENABLE);
+	//RCC_APB2PeriphClockCmd(SIM800A_Reboot_RCC_APBPERIPH_GPIOX, ENABLE);
 	
-	GPIO_InitStructure.GPIO_Pin = SIM800A_Reboot_GPIO_PIN;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_Init(SIM800A_Reboot_GPIOX, &GPIO_InitStructure);
+	GPIO_InitStructure.Pin = SIM800A_Reboot_GPIO_PIN;
+	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	HAL_GPIO_Init(SIM800A_Reboot_GPIOX, &GPIO_InitStructure);
+	HAL_GPIO_WritePin(SIM800A_Reboot_GPIOX, SIM800A_Reboot_GPIO_PIN,1);
 	
-	GPIO_SetBits(SIM800A_Reboot_GPIOX, SIM800A_Reboot_GPIO_PIN);//开机
 }
 /*****************************************************************************/
 // FUNCTION NAME: SIM800A_CommandHandleDeinit
@@ -52,7 +53,7 @@ void SIM800A_CommandHandleDeinit(SIM800A_QueryTypeDef * CommandHandle)
     CommandHandle->ReturnStringExt1 = NULL;
     CommandHandle->ReturnStringExt2 = NULL;
     CommandHandle->GPRSUSART = USART_GPRS;
-    CommandHandle->DEBUGUSART = USART_DEBUG;
+    //CommandHandle->DEBUGUSART = USART_DEBUG;
    // CommandHandle->MsgQ = MsgQ;
     CommandHandle->delayMs = 800;
     CommandHandle->retryTimes = 3;
@@ -75,7 +76,7 @@ void SIM800A_CommandHandleInit(SIM800A_QueryTypeDef * CommandHandle, USART_TypeD
     CommandHandle->ReturnStringExt1 = NULL;
     CommandHandle->ReturnStringExt2 = NULL;
     CommandHandle->GPRSUSART = GPRSUSART;
-    CommandHandle->DEBUGUSART = DEBUGUSART;
+    //CommandHandle->DEBUGUSART = DEBUGUSART;
     //CommandHandle->MsgQ = MsgQ;
     CommandHandle->delayMs = 800;
     CommandHandle->retryTimes = 3;
@@ -95,17 +96,17 @@ Status SIM800A_SendSampleCommand(SIM800A_QueryTypeDef * CommandHandle)
     u8 retryCnt = 0;
     u8 waitCnt = 0;
     u8 * receiveString;
-    OS_Q_DATA ReceiveMsgQData;			//存放消息队列状态的结构
-    INT8U error;
+    //OS_Q_DATA ReceiveMsgQData;			//存放消息队列状态的结构
+    uint8_t error;
     Status returnStatus;
     USARTSendString(CommandHandle->GPRSUSART, (u8*)CommandHandle->SendString);//发送的消息
-    OSTimeDlyHMSM(0, 0, 1, CommandHandle->delayMs);
+    HAL_Delay(CommandHandle->delayMs);
     while(1)
     {
         if (waitCnt < 5 && retryCnt <= CommandHandle->retryTimes)
         {
             
-            OSQQuery(CommandHandle->MsgQ, &ReceiveMsgQData);
+            //OSQQuery(CommandHandle->MsgQ, &ReceiveMsgQData);
             if(ReceiveMsgQData.OSNMsgs > 0)
             {
                 receiveString = OSQPend(CommandHandle->MsgQ, 0, &error);		//消息出队
@@ -176,9 +177,9 @@ Status SIM800A_TryToHandshake(SIM800A_QueryTypeDef * CommandHandle)
 /*****************************************************************************/
 void SIM800A_Reboot(void)
 {
-    GPIO_SetBits(GPIOB, GPIO_Pin_14);
+    /*GPIO_SetBits(GPIOB, GPIO_Pin_14);
     OSTimeDlyHMSM(0, 0, 2, 0);
-    GPIO_ResetBits(GPIOB, GPIO_Pin_14);
+    GPIO_ResetBits(GPIOB, GPIO_Pin_14);*/
 }
 /*****************************************************************************/
 // FUNCTION NAME: NetWorkSendHTTPActionCommand
@@ -358,14 +359,14 @@ Status SIM800A_HTTPConnect(SIM800A_QueryTypeDef * NetWorkCommandHandle, u8 * req
             //配置URL：
             char FinalURLStr[140] = "AT+HTTPPARA=\"URL\",\"";
             char *str2 = "\"\r\n";
-            if (ERROR_STACKOVERFLOW == MergeString(FinalURLStr, (char*)requestURL, 140))
+            /*if (ERROR_STACKOVERFLOW == MergeString(FinalURLStr, (char*)requestURL, 140))
             {
                 USARTSendString(USART_DEBUG, "ERROR_STACKOVERFLOW when config url1\n");
             }
             if (ERROR_STACKOVERFLOW == MergeString(FinalURLStr, (char*)str2, 140))
             {
                 USARTSendString(USART_DEBUG, "ERROR_STACKOVERFLOW when config url2\n");
-            }
+            }*/
             NetWorkCommandHandle->SendString = FinalURLStr;   
             NetWorkCommandHandle->DebugString = "HTTP 40%\r\n"; 
             //USARTSendString(USART_DISPLAY, FinalURLStr);
@@ -393,7 +394,7 @@ Status SIM800A_HTTPConnect(SIM800A_QueryTypeDef * NetWorkCommandHandle, u8 * req
         else
         {
             retryCnt++;
-            USARTSendString(USART_DEBUG, "HTTP retrying\n");
+           // USARTSendString(USART_DEBUG, "HTTP retrying\n");
         }
     }
     return returnStatus;
@@ -407,7 +408,7 @@ Status SIM800A_HTTPConnect(SIM800A_QueryTypeDef * NetWorkCommandHandle, u8 * req
 // CREATED: 2017-11-02 by zilin Wang
 //
 // FILE: network.c
-/*****************************************************************************/
+/*****************************************************************************//*
 Status SIM800A_TCPSendPackage(SIM800A_QueryTypeDef * NetWorkCommandHandle, u8 * data, int dataLength, u8 * IPString, int port)
 {
     Status returnStatus = ERROR_NONE;
@@ -427,7 +428,7 @@ Status SIM800A_TCPSendPackage(SIM800A_QueryTypeDef * NetWorkCommandHandle, u8 * 
                 break;
             /******************************************************************************
             发送TCP服务器配置：
-            ******************************************************************************/
+            ******************************************************************************//*
             char SendString[80] = "AT+CIPSTART=\"TCP\",\"";
             //在前半句中放入url或ip：
             MergeString(SendString, (char*)IPString, 80);//此时的字符串就像这样：AT+CIPSTART=\"TCP\",\"sys.czbtzn.cn
@@ -462,11 +463,11 @@ Status SIM800A_TCPSendPackage(SIM800A_QueryTypeDef * NetWorkCommandHandle, u8 * 
         else
         {
             retryCnt++;
-            USARTSendString(USART_DEBUG, "TCP retrying\n");
+            //USARTSendString(USART_DEBUG, "TCP retrying\n");
         }
     }
     return returnStatus;
-}
+}*/
 /*****************************************************************************/
 // FUNCTION NAME: NetworkTCPSendCommand
 //
@@ -477,6 +478,7 @@ Status SIM800A_TCPSendPackage(SIM800A_QueryTypeDef * NetWorkCommandHandle, u8 * 
 //
 // FILE: network.c
 /*****************************************************************************/
+/*
 Status NetworkSendTCPSendCommand(SIM800A_QueryTypeDef * NetWorkCommandHandle, u8 * data, int dataLength)
 {
     Status returnStatus;
@@ -530,7 +532,7 @@ Status NetworkSendTCPSendCommand(SIM800A_QueryTypeDef * NetWorkCommandHandle, u8
     }
     while(0);
     return returnStatus;
-}
+}*/
 /*****************************************************************************/
 // FUNCTION NAME: SIM800A_TCPHandleInit
 //
@@ -609,6 +611,7 @@ Status SIM800A_SetUpTCPConnection(SIM800A_QueryTypeDef * NetWorkCommandHandle, T
 //
 // FILE: SIM800A.c
 /*****************************************************************************/
+/*
 Status SIM800A_TCPCommunication(SIM800A_QueryTypeDef * NetWorkCommandHandle, TCP_TypeDef * TCPHandle)
 {
     //验证参数正确性：
@@ -700,6 +703,7 @@ Status SIM800A_TCPCommunication(SIM800A_QueryTypeDef * NetWorkCommandHandle, TCP
     while(0);
     return returnStatus;
 }
+*/
 /*****************************************************************************/
 // FUNCTION NAME: SIM800A_DisConnectTCPConnection
 //
